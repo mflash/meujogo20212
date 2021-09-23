@@ -29,6 +29,6 @@ func _input(event: InputEvent) -> void:
 
 # Callback do signal timeout (Timer)	
 func _on_Timer_timeout() -> void:
-	pass
-#	$Score.visible = !$Score.visible
+	#pass
+	$Score.visible = !$Score.visible
 	
