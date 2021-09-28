@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tilesets/Plataforms.tres" type="TileSet" id=1]
+[ext_resource path="res://Weapons/Bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 393225, 2, 0, 393240, 3, 0, 720914, 4, 0, 983045, 1, 0, 1048597, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 853.785, 319.38 )
+gravity = 2500
+bullet = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+
+[node name="SceneLimit" type="Position2D" parent="."]
+position = Vector2( 569.807, 746.106 )
+__meta__ = {
+"_gizmo_extents_": 50.0
+}
