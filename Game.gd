@@ -4,12 +4,12 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a: int = 2
 # var b: String = "text"
+onready var sceneLimit := $Level/SceneLimit
+onready var player := $Level/Player
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	print("Total children: "+str(get_child_count()))
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func _physics_process(delta: float) -> void:
+	if player.position.y > sceneLimit.position.y:
+		get_tree().change_scene("res://Levels/GameOver.tscn")
