@@ -7,6 +7,7 @@ onready var sprite := $AnimatedSprite
 
 #onready var bullet := preload("res://Weapons/Bullet.tscn")
 export (PackedScene) var bullet : PackedScene
+onready var jumpSound := $JumpSound
 	
 var velocity := Vector2()
 
@@ -37,6 +38,7 @@ func get_input_side():
 		var b := bullet.instance()
 		b.position = global_position
 		owner.add_child(b)
+		jumpSound.play()
 
 	if velocity.x > 0:
 		sprite.play("right")
